@@ -41,14 +41,16 @@ app.get('/client/euduka/admin', (req, res) => {
     res.render('login_admin');
 });
 
-// BD connexion
-mongoose.connect(config.MONGODB_URL)
-    .then(() => {
-        console.log('Connexion à la base de données réussie !');
-    })
-    .catch(err => {
-        console.error('Erreur de connexion à la base de données :', err);
-    });
+app.get("/api/test", async (req, res) => {
+    try {
+        await connectDB(config.MONGODB_URL);
+        res.json({ ok: true });
+    } catch (err) {
+        res.status(500).json({ error: "DB connection failed" });
+    }
+});
+
+module.exports = app;
 
 // server.listen(config.PORT, () => {
 //     console.log(`✅ Server listening on port ${config.PORT}`);
