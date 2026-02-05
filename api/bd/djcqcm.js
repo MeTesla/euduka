@@ -1,4 +1,4 @@
-export const qcmData = `Quand et où le condamné doit-il être transféré après six semaines ?
+module.exports = { qcmData }; const qcmData = `Quand et où le condamné doit-il être transféré après six semaines ?
 À sept heures et demie à la conciergerie
 À sept heures et demie, à l'Hôtel de ville
 À huit heures et demie, à la conciergerie

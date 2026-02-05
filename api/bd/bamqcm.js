@@ -1,4 +1,4 @@
-export const qcmData = [
+module.exports = { qcmData }; const qcmData = [
     {
         "qst": "Quel est le genre littéraire de La boîte à merveilles?",
         "c1": "Une autobiographie",

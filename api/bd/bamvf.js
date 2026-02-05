@@ -1,4 +1,4 @@
-export const bamvffff = [
+module.exports = { bamvf, bamvffff }; const bamvffff = [
   { 'question': 'Sidi Mohammed était un enfant heureux', 'rep': 'Faux' },
   { 'question': 'Les événements du roman se déroulent à Fès.', 'rep': 'Vrai' },
   { 'question': 'Lalla Aicha était l\'amie intime et la confidente de Lalla Zoubida.', 'rep': 'Vrai' },
@@ -40,7 +40,7 @@ export const bamvffff = [
 
 //module.exports = bamvf
 
-export const bamvf = [{
+const bamvf = [{
   'question': `Les événements du roman se déroulent à Fès.`,
   'rep': `Vrai`,
   'question_ar': `تدور أحداث الرواية في فاس.`

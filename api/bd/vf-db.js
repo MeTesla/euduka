@@ -1,4 +1,4 @@
-export const vfData = [
+module.exports = { vfData }; const vfData = [
   {'question': 'Sidi Mohammed était un enfant heureux', 'rep': 'Faux'},
   {'question': 'Les événements du roman se déroulent à Fès.', 'rep': 'Vrai'},
   {'question': 'Lalla Aicha était l\'amie intime et la confidente de Lalla Zoubida.', 'rep': 'Vrai'},

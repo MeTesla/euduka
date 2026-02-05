@@ -1,4 +1,4 @@
-export const ordreEventsData = [
+module.exports = { ordreEventsData }; const ordreEventsData=[
   `Le prologue présente les personnages.`,
   `Le prologue raconte l'histoire des deux frères d'Antigone.`,
   `La nourrice surprend Antigone qui est sortie très tôt le matin.`,

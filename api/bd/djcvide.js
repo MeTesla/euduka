@@ -1,4 +1,6 @@
-export const textesVide =[
+module.exports = { textesVide };
+const textesVide =[
+
 {
 texte : `L'histoire se déroule sur une période de six semaines, depuis l'annonce de la condamnation à mort du protagoniste jusqu'à son exécution imminente. Le récit est présenté sous forme de journal intime, permettant au lecteur de suivre les pensées et les émotions du condamné tout au long de ses derniers jours.`,
 listeMots: ['semaines', 'condamnation', 'exécution', 'journal', 'pensées', 'condamné' ]
@@ -33,7 +35,7 @@ listeMots: ['semaines', 'condamnation', 'exécution', 'journal', 'pensées', 'co
 }
 ]
 /*
-export const textesVide=[
+const textesVide=[
 {
 'texte': `La Boîte à merveilles est un roman autobiographique écrit par Ahmed Essafrioui en 1942. Il raconte l'histoire d'un enfant âgé de six ans qui se nomme Sidi Mohammed qui souffre de la solitude son seul ami était sa boîte à merveilles.`,
 'replace': ['merveilles','autobiographique', 'Ahmed', 'six', 'Mohammed', 'boîte']

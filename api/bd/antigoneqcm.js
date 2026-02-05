@@ -1,4 +1,4 @@
-export const qcmData = `Qu'est-ce qu'un mythe ?
+module.exports = { qcmData }; const qcmData = `Qu'est-ce qu'un mythe ?
 Un récit mytique.
 Un récit religieux.
 Un récit historique.

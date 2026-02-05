@@ -1,4 +1,4 @@
-export const phrases=[`Le condamné avait six semaines à vivre`,
+module.exports = { phrases }; const phrases=[`Le condamné avait six semaines à vivre`,
 `Le condamné a commis un crime de sang`,
 `Le dernier jour d'un condamné est un roman à thèse`,
 `Victor Hugo a écrit Le dernier jour d'un condamné en 1829`,

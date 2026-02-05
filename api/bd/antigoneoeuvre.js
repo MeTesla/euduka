@@ -1,4 +1,4 @@
-export const oeuvre=`<p><strong>LES PERSONNAGES</strong></p>
+module.exports = { oeuvre }; const oeuvre=`<p><strong>LES PERSONNAGES</strong></p>
 <p style="padding-left: 30px;">Antigone, <em>fille d'Oedipe</em></p>
 <p style="padding-left: 30px;">Créon, <em>roi de Thèbes</em></p>
 <p style="padding-left: 30px;">Hémon, <em>fils de Créon</em></p>

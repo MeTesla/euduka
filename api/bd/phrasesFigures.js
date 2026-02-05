@@ -1,4 +1,4 @@
-const phrasesFigures=[
+module.exports = { phrasesFigures }; const phrasesFigures=[
     {'type':'analogie', 'phrase': `Un pigeon disait des mots si jolis `,'figure':'Une personnification', 'explication':`Un pigeons ne "dit" pas, il ne parle pas, C'est l'homme qui parle`},
     {'phrase': `A dix ans, on est presque un homme. A dix ans on parcourt tout seul le quartier `,'figure':'Une anaphore', 'explication':`L'expression "A dix ans" est répétée au début de plusieurs phrases`},
     {'phrase':`....pour attraper un moineau mais le moineau ne vient jamais. Il désire tant ce petit moineau ! `,'figure':'Une répétition', 'explication':`Le mot "moineau" est répété plusieurs fois dans la phrase (pas au début)`},

@@ -1,4 +1,4 @@
-export const textesVide=[
+module.exports = { textesVide }; const textesVide=[
 {
 'texte': `La Boîte à merveilles est un roman autobiographique écrit par Ahmed Essafrioui en 1942. Il raconte l'histoire d'un enfant âgé de six ans qui se nomme Sidi Mohammed qui souffre de la solitude son seul ami était sa boîte à merveilles.`,
 'listeMots': ['merveilles','autobiographique', 'Ahmed', 'six', 'Mohammed', 'boîte']

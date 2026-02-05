@@ -1,4 +1,4 @@
-export const phrases=[
+module.exports = { phrases }; const phrases=[
 `Antigone sait qu'elle va mourir`,
 `Antgone veut enterrer Polynice car c'est son devoir`,
 `Antigone est la fille d'Oedipe`,

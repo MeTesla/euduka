@@ -1,4 +1,4 @@
-export const phrases=[`Le narrateur décrit dar chouafa et ses locataires`,
+module.exports = { phrases }; const phrases=[`Le narrateur décrit dar chouafa et ses locataires`,
 `Sidi Mohammed n'aime pas le bain maure`,
 `Lalla Zoubida se dispute avec Rahma`,
 `Les deux femmes vont à Sidi Ali Boughaleb`,

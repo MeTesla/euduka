@@ -1,4 +1,4 @@
-export const djcvf = [{'question' : `Victor Hugo est un écrivain du 20ème siècle`, 'rep': 'Faux'}, 
+module.exports = { djcvf }; const djcvf = [{'question' : `Victor Hugo est un écrivain du 20ème siècle`, 'rep': 'Faux'}, 
 {'question' : `Victor Hugo est un écrivain du 19ème siècle`, 'rep': 'Vrai'},
 {'question' : `Le dernier jour d'un condamné est paru en 1929`, 'rep': 'Faux'},
 {'question' : `Le dernier jour d'un condamné est paru en 1829`, 'rep': 'Vrai'},

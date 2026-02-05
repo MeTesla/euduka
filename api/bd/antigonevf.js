@@ -1,4 +1,4 @@
-export const antigonevf = [
+module.exports = { antigonevf }; const antigonevf = [
   { 'question': `Antigone est sortie le matin tôt pour voir Hémon.`, 'rep': 'Faux' },
   { 'question': `La nourrice est la mère d'Antigone.`, 'rep': 'Faux' },
   { 'question': `Antigone a deux frères et deux sœurs.`, 'rep': 'Faux' },

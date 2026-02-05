@@ -1,5 +1,5 @@
 
-export const ordreEventsData=[
+module.exports = { ordreEventsData }; const ordreEventsData=[
   `Un prisonnier souffre depuis cinq semaines d'une seule idée : "Condamné à mort"`,
   `Le condamné se rappelle son procès et sa réaction le moment du verdict`,
   `Le condamné essaie d'accepter sa sentence : On va tous mourir un jour ou un autre`,
