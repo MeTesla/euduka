@@ -15,16 +15,16 @@ const router = require('./routes/routeEleve')
 const firebaseRouter = require('./routes/firebaseRoutes')
 
 // Socket.IO
-const { Server } = require('socket.io')
-const http = require('http');
-const EleveModel = require('./models/EleveModel');
-const server = http.createServer(app)
+// const { Server } = require('socket.io')
+// const http = require('http');
+// const EleveModel = require('./models/EleveModel');
+// const server = http.createServer(app)
 
-const io = new Server(server, {
-    cors: {
-        origin: config.CORS_ORIGINS
-    }
-})
+// const io = new Server(server, {
+//     cors: {
+//         origin: config.CORS_ORIGINS
+//     }
+// })
 app.use(cors({
     origin: config.CORS_ORIGINS
 }))
@@ -50,24 +50,24 @@ mongoose.connect(config.MONGODB_URL)
         console.error('Erreur de connexion à la base de données :', err);
     });
 
-server.listen(config.PORT, () => {
-    console.log(`✅ Server listening on port ${config.PORT}`);
-})
+// server.listen(config.PORT, () => {
+//     console.log(`✅ Server listening on port ${config.PORT}`);
+// })
 
 
 // websocket
-const djcvf = [
-    { 'question': `Maupassant est un écrivain du 20ème siècle`, 'rep': 'Faux' },
-    { 'question': `Victor Hugo est un écrivain du 19ème siècle`, 'rep': 'Vrai' },
-    { 'question': `Le dernier jour d'un condamné est paru en 1929`, 'rep': 'Faux' },
-    { 'question': `Le dernier jour d'un condamné est paru en 1829`, 'rep': 'Vrai' },
-    { 'question': `Le dernier jour d'un condamné est un roman autobiographique`, 'rep': 'Faux' },
-    { 'question': `Le dernier jour d'un condamné est un journal intime`, 'rep': 'Faux' },
-    { 'question': `Le dernier jour d'un condamné est un roman à thèse`, 'rep': 'Vrai' },
-    { 'question': `Le narrateur dans le dernier jour d'un condamné est un condamné à mort`, 'rep': 'Vrai' },
-    { 'question': `Le narrateur dans le dernier jour d'un condamné est Victor Hugo`, 'rep': 'Faux' },
-    { 'question': `Le dernier jour d'un condamné est contre la peine de mort.`, 'rep': 'Faux' },
-    { 'question': `La thse dfendue dans Le dernier jour dun condamné est labolition de la peine de mort`, 'rep': 'Faux' },
-    { 'question': `Le condamné du roman est condamné aux travaux forcés.`, 'rep': 'Faux' }
-]
-setInterval(() => io.emit('liste', djcvf), 1000 * 60 * 5)
+// const djcvf = [
+//     { 'question': `Maupassant est un écrivain du 20ème siècle`, 'rep': 'Faux' },
+//     { 'question': `Victor Hugo est un écrivain du 19ème siècle`, 'rep': 'Vrai' },
+//     { 'question': `Le dernier jour d'un condamné est paru en 1929`, 'rep': 'Faux' },
+//     { 'question': `Le dernier jour d'un condamné est paru en 1829`, 'rep': 'Vrai' },
+//     { 'question': `Le dernier jour d'un condamné est un roman autobiographique`, 'rep': 'Faux' },
+//     { 'question': `Le dernier jour d'un condamné est un journal intime`, 'rep': 'Faux' },
+//     { 'question': `Le dernier jour d'un condamné est un roman à thèse`, 'rep': 'Vrai' },
+//     { 'question': `Le narrateur dans le dernier jour d'un condamné est un condamné à mort`, 'rep': 'Vrai' },
+//     { 'question': `Le narrateur dans le dernier jour d'un condamné est Victor Hugo`, 'rep': 'Faux' },
+//     { 'question': `Le dernier jour d'un condamné est contre la peine de mort.`, 'rep': 'Faux' },
+//     { 'question': `La thse dfendue dans Le dernier jour dun condamné est labolition de la peine de mort`, 'rep': 'Faux' },
+//     { 'question': `Le condamné du roman est condamné aux travaux forcés.`, 'rep': 'Faux' }
+// ]
+// setInterval(() => io.emit('liste', djcvf), 1000 * 60 * 5)
