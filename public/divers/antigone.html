@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <title></title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <section class="nav">
+      <div class="accueil">
+        <img src="/client/assets/img/euduka.png" alt="" />
+      </div>
+      <ul class="menu">
+        <li><div><a href="index.html">Accueil</a></div></li>
+        <li>
+          <div class="mega">Oeuvres</div>
+          <ul class="sous">
+            <li> <a href="bam.html">La boîte à merveilles</a> </li>
+            <li><a href="#">Antigone</a></li>
+            <li><a href="djc.html">Le dernier jour d'un condamné</a></li>
+          </ul>
+        </li>
+        <li>
+           <div class="mega">Langue</div>
+           <ul class="sous">
+             <li>Les figures de style</li>
+             <li>L'énonciation</li>
+             <li>Les registres litéraires</li>
+           </ul>
+        </li>
+        <li><div>A propos</div></li>
+        <li><div>Nous contacter</div></li>
+        
+      </ul>
+      <div class="hum">  </div>
+    
+    <style>
+     .nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    padding: 0px 20px;
+  }
+  .accueil img{
+    width: 60px;
+  }
+
+  .menu{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: flex-start;
+    height: 50px;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .menu > li{
+    position: relative;
+    margin-left: 40px;
+    list-style: none;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  .menu .sous{
+    position: absolute;
+    display: none;
+    left: -10px;
+    width: 260px;
+    padding: 10px;
+    margin-left: 20px;
+    list-style: none;
+  }
+  .menu .sous li{
+    background-color: #eee;
+    padding: 10px 5px;
+    margin-bottom: 5px;
+  }
+  .hum{
+    position: relative;
+    display:none;
+    width: 25px;
+    height: 25px;
+    background-image: url('/client/assets/img/hum-menu.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  @media screen and (max-width: 780px){
+      .hum{
+        display: block;
+        z-index: 23;
+      }
+      .hum.active{
+        background-image: url('/client/assets/img/times.png')
+      }
+      .menu{
+       display:none;
+       position: absolute;
+       top: 0px; left: 0;
+       width: 100vw;
+       height: 100vh;
+       background-color: #42A5F5;
+       z-index: 22;
+       flex-direction: column;
+      }
+      .menu.active {
+        display: flex;
+      }
+
+      .menu .sous{
+        position: static;
+        display: block;
+      }
+      .menu .sous li{
+        background-color: transparent;
+      }
+      .menu li div{
+        text-align: left;
+        font-weight: bold;
+      }
+    }
+   </style>
+   <script>
+     const hum=document.querySelector('.hum')
+     const menu=document.querySelector('.menu')
+     hum.onclick=()=>{
+       menu.classList.toggle('active')
+       hum.classList.toggle('active')
+     }
+   </script>
+    </section>
+    
+    <section class="scenes">
+      <style>
+        .scenes{
+          height: 85vh;
+          overflow: auto;
+          width: 70%;
+          margin: 30px auto;
+          padding: 10px;
+          display: grid;
+          grid-template-columns: auto auto auto auto auto;
+          gap: 10px;
+        }
+        .scenes > div{
+          text-align: center;
+          padding: 30px 0;
+          background-color: #00B8D4;
+          border-radius: 5px;
+          font-weight: bold;
+          color : white;
+        }
+        @media screen and (max-width: 780px){
+          .scenes{
+            width: 100%;
+            grid-template-columns: repeat(3, auto);
+          }
+        }
+      </style>
+    </section>
+  </div>
+  
+<style>
+  *{margin: 0; padding: 0; box-sizing: border-box}
+    body{
+      
+      overflow: auto;
+    }
+  .didascalie{
+      color: blue;
+      font-style: italic;
+      font-size: 0.8rem;
+      opacity: 0.6;
+    }
+  </style>
+  
+<script type="module">
+/*
+const wrapper= document.querySelector('.wrapper')
+const scenes=document.querySelector('.scenes');
+for(let i=0; i<22; i++){
+ const div=document.createElement('div');
+ div.className='scene';
+ i==0 ? div.innerHTML="Prologue" :div.innerHTML="Scène " + i
+ scenes.appendChild(div)
+ div.addEventListener('click',()=> listeAct(document.body,i)) 
+}
+*/
+ // Put here list activities
+</script>
+</body>
+
+</html>

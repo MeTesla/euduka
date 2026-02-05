@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau Responsive</title>
+</head>
+<body>
+  <h1 class="admin">Admin Dashboard</h1>
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Compte</th>
+                    <th>Ville</th>
+                    <th>Email</th>
+                    <th class="sticky">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Jean</td>
+                    <td>Premium</td>
+                    <td>Paris</td>
+                    <td>karim@gmail.com</td>
+                    <td class="sticky">Activer</td>
+                </tr>
+                <tr>
+                    <td>Marie</td>
+                    <td>Freemium</td>
+                    <td>Lyon</td>
+                    <td>Taha.gmail.com</td>
+                    <td class="sticky">Activé</td>
+                </tr>
+                <tr>
+                    <td>Marie</td>
+                    <td>Freemium</td>
+                    <td>Lyon</td>
+                    <td>Taha.gmail.com</td>
+                    <td class="sticky">Activé</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+}
+.admin{text-align: center;}
+.table-responsive {
+    overflow-x: auto; /* Permet le défilement horizontal */
+}
+
+.sticky{
+    position:fixed;
+    right: 0;
+    background-color: yellow;
+}
+table {
+    width: auto; /* Prend toute la largeur disponible */
+    border-collapse: collapse; /* Supprime les espaces entre les cellules */
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Couleur d'arrière-plan pour les lignes paires */
+}
+
+thead tr{background-color: red;}
+
+th, td {
+    border: 1px solid #ddd; /* Bordure des cellules */
+    padding: 8px; /* Espacement interne */
+}
+
+
+@media (max-width: 600px) {
+    tr {
+        ddisplay: block; /* Utilise flexbox pour les lignes */
+        fflex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante */
+    }
+    
+    th, td {
+        flex: 1 0 50%; /* Chaque cellule prend 50% de la largeur */
+        box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur */
+    }
+}
+
+</style>
+</body>
+</html>
+
+</body>
+
+</html>

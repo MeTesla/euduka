@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="styles/exercises.css" type="text/css" media="all" />
+  <!-- font awesome  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js" integrity="sha512-6BTOlkauINO65nLhXhthZMtepgJSghyimIalb+crKRPhvhmsCdnIuGcVbR5/aQY2A+260iC1OPy1oCdB6pSSwQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Toastify -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1RL7PL7EFG"></script>
+  <!-- Confetti -->
+   <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+  <!-- ChartJs -->
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <!-- Socket.IO Client -->
+  <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-1RL7PL7EFG');
+  </script>
+  <title>Home</title>
+</head> 
+
+<body class="violet">  
+  <div class="wrapper">
+    <section class="nav">   
+      <div class="accueil">
+        <img src="/client/assets/img/euduka.png" alt="" />        
+      </div>
+      <div class="menu">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-user"></i>        
+      </div>
+
+    <style>
+      #toast-id{
+        border-radius: 20px;
+      }
+      .toast-id{
+        border-radius: 10px;
+      }
+      .nav{
+          display: flex; 
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px 25px;
+        }
+        
+        .accueil img{
+          width: 60px;
+        }
+
+        .nav .menu{
+          position: relative;
+          display: flex;
+          align-items: center;
+          border: 1px solid gray;
+          border-radius: 20px;
+          padding: 5px 10px;
+        }
+        .nav .menu svg{
+          color: rgb(46, 45, 45);
+          font-size: 1.3rem;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+
+        .nav .menu:hover svg{
+          color: rgb(74, 74, 255);
+        }
+        .nav .menu .user-menu{
+          z-index: 33;
+          position: absolute;
+          top : 105%; right: 0px; 
+          /* 100% c'est nouveau pour MOI */
+          border-radius:10px;
+          overflow: hidden;
+          width: 200px;        
+          display: none;
+        }
+        .nav .menu .user-menu.show{
+          display: block;
+        }
+        .nav .menu .user-menu > div{         
+          display: flex;
+          flex-direction: column;
+          padding: 5px;
+          align-items: center;
+          transition: 0.3s;
+        }
+        .nav .menu .user-menu div img{
+          margin-right: 10px;
+        }
+        .nav .menu .user-menu div div{
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 10px;
+          padding: 10px;
+          background-color: #d1e7f8;
+          transition: 0.3s;
+        }
+        .nav .menu .user-menu div div:hover{
+          background-color: #94cdfc;
+          cursor: pointer;
+        }
+         .nav .menu .user-menu div img{
+          width: 30px;
+         }
+        .nav .menu .user-menu div.guest, 
+        .nav .menu .user-menu div.connected{
+          display: none;
+        }
+        .nav .menu .user-menu div.show, 
+        .nav .menu .user-menu div.show{
+          display: block;
+        }
+        .user-menu .premium, .user-menu .free-mins, 
+        .user-menu .menu-profile, .user-menu .menu-logout{        
+          cursor: pointer;
+          display: flex;
+          flex-direction: row !important;
+        }
+        .creer-compte-page{
+          position: fixed;
+          top:0; left: 0;
+          width: 100%;
+          background-color: white;
+        }
+        .modal-full{
+          position: fixed;
+          width: 100vw; height: 100vh;
+          top:0; left:0 ;
+          background-color: red;
+        }
+    </style>
+
+    </section>
+    
+    <section class="hero">
+      <div class="bg">
+        <img class="blob" src="/client/assets/img/blob.svg" alt="" />
+        <img class="fivelines" src="/client/assets/img/fiveLines.svg" alt="" />
+        <img class="gouttes" src="/client/assets/img/gouttes.svg" alt="" />
+        <img class="student" src="/client/assets/img/images/student.png" alt="" />
+      </div>
+      <div class="content">
+        <h2>Eudûka</h2>
+        <h4>Ta route vers le succès passe par <span>Eudûka</span></h4>
+        <button class="btn-compte">Créer un Compte </button>        
+      </div>
+   <style>
+    .hero{
+      height: 50vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+    }
+    .bg{
+      width: 100%; height: 100%;
+      position: absolute;
+      z-index: -1;
+    }
+    .blob{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 250px;
+      transform: rotateZ(80deg);
+    }
+    .fivelines{
+      position: absolute;
+      height: 50px;
+      top: 40px; left: 50px;
+      transform: rotateZ(-50deg);
+    }
+    .gouttes{
+      position: absolute;
+      height: 20px;
+      bottom: 200px;
+      left: 100px;
+      transform: rotateZ(35deg);
+    }
+   
+    .student{
+      position: absolute;
+      top: 20px; right: 0px;
+      height: 80%;
+      transform: rotateY(180deg);
+    }
+    .content{
+      width: 70%;
+      margin-left: 20px;
+      margin-bottom: 60px;
+    }
+    .content h4{
+      margin: 15px 0;
+      font-size: 1.4rem; 
+    }
+    
+    h4 span{
+      color: darkred;
+      font-size: 1.2rem;
+      line-height: 30px;
+      padding: 5px; 
+      border-radius: 10px;
+    }
+    
+    button.btn-compte{
+      padding: 10px 15px;
+      border-radius: 10px;
+      outline: none;
+      border:1px solid;
+      font-weight: bolder;
+      font-size: 1rem;
+      background-color: #7C4DFF;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+    </section>
+    
+    <section class="countdown">
+      <h2>Temps qui reste avant <span>L'examen régional</span> </h2>
+        
+        <div class="countdown-container">
+          <div class="mois time flx">
+            <div class="chiffre"> 03 </div>
+            <div class="texte"> Mois</div>
+          </div>
+          <div class="jours time flx">
+            <div class="chiffre"> 14</div>
+            <div class="texte">Jours </div>
+          </div>
+          <div class="heures time flx">
+            <div class="chiffre"> 06</div>
+            <div class="texte"> Heures </div>
+          </div>
+        </div>
+      <style>
+        .countdown{
+          margin: 40px auto;
+          width: 80%;
+          padding: 10px;
+          border: 1px solid gray;
+          border-radius: 20px;
+        }
+        .countdown h2{
+          font-size: 1.3rem;
+          margin: 15px auto;
+          text-align: center;
+        }
+        .countdown h2 span{
+          color: orangered;
+        }
+        .countdown-container {
+          margin: 10px auto;
+          display: flex;
+          justify-content: center;
+          gap: 10px
+        }
+        .time{        
+          width: 100px;
+          /*height: 100px; */
+          border: 1px solid dimgray;
+          flex-direction: column;
+          border-radius: 30px;
+          overflow: hidden;
+        }
+        .time .chiffre{
+          padding-top: 10px;
+          font-size: 1.4rem;
+          font-weight: bold;
+        }
+        .time .texte{
+          padding: 8px 0px 10px;
+          text-align: center;
+          font-size: 1rem;
+          font-weight: bolder  ;
+          background-color: #4FC3F7;
+          width: 100%;
+        }
+      </style>
+    </section>
+
+    <section class="oeuvres">
+      <div class="oeuvres-container">
+        <div class="bam">
+          <img src="/client/assets/img/images/couverture-bam.jpg" alt="" />
+        </div>
+        <div class="antigone">
+          <img src="/client/assets/img/images/couverture-antigone.jpg" alt=""/>
+        </div>
+        <div class="djc">
+          <img src="/client/assets/img/images/couverture-djc.jpg" alt="" />
+        </div>
+      </div>
+      <style>
+        .oeuvres-container{
+          display: flex;
+          justify-content: space-evenly;
+          width: 100%;
+          padding: 40px 0;
+          overflow-x: auto;
+        }
+        .oeuvres-container div{
+          margin: 10px;
+          cursor: pointer;
+        }
+        .oeuvres-container img{
+          height: 370px;
+          border-radius: 10px;
+          border: 1px solid lightgray;
+        }
+  
+      </style>
+    </section>
+
+    <section class="suggestion">
+      <div class="suggestion-container">
+        <h1 class="suggestion-qst"> هـل لديك مقترحات لتطوير الموقع؟</h1>
+        <input type="text" id="nom" required placeholder="Nom">
+        <textarea placeholder="Ajouter des productions écrites svp" id="suggest"></textarea>
+        <button id="btn-envoyer" >Envoyer</button>
+      </div>
+ 
+      <style>
+      .suggestion{
+        width: 60%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 20px 30px; 
+        border-radius: 10px;
+        background-color: lightyellow;
+      }
+      .suggestion-qst{
+        direction: rtl;
+      }
+
+        .suggestion textarea, .suggestion #nom{
+          width: 100%;
+          height: 100px;
+          display: block;
+          margin: 30px auto;
+          padding: 15px;
+          border-radius: 10px;
+          outline: none;
+          border: 1px solid darkgray;
+        }
+        .suggestion #nom{
+        height: 50px;
+      }
+        .suggestion button{
+          display: block;
+          padding: 10px 20px;
+          border-radius: 5px;
+          outline: none;
+          border: 1px solid darkgray;
+          justify-self: flex-end;
+        }
+
+      </style> 
+    </section>
+    
+    <section class="langue">
+      <div class="langue-container">
+        <h2>Langue</h2>
+        <div class="liste-lecons">
+          <div class="figure flx">
+            <!-- <a href="./langue/figures/figures.html">Les figures de style</a> -->
+            Les figures de style
+          </div>
+          <div class="enonciation flx">
+            L'énonciation
+          </div>
+          <div class="registres flx">
+            Les registres littéraires
+          </div>
+        </div>
+      </div>
+      <style>
+        .langue-container h2{
+          padding: 20px;
+        }
+        .liste-lecons{
+          display:flex;
+          gap: 15px;
+          justify-content: center;
+          margin: 15px 0;
+        }
+        .liste-lecons > div{
+          width: 25%;
+          height: 250px;
+          padding: 15px;
+          border: 1px solid gray;
+          border-radius: 10px;
+          font-family: tahoma;
+          font-size: 1.1rem;
+        }
+        .enonciation, .registres{
+          opacity: 0.4;
+        }
+      </style>
+    </section>
+   
+    <section class="caracteristiques">
+  <h2>Pourquoi réviser avec <span>Eudûka</span> ?</h2>
+  <div class="caracteristiques-container">
+      <div class="ludique flx">
+        <img src="/client/assets/img/images/ludique.png" alt="" />
+        <span>Ludique</span>
+      </div>
+      <div class="pratique flx">
+        <img src="/client/assets/img/images/pratique.png" alt="" />
+        <span>Pratique</span>
+      </div>
+      <div class="gratuit flx">
+        <img src="/client/assets/img/images/gratuit.png" alt="" />
+        <span>Gratuit</span>
+    </div>
+  </div>
+      <style>
+        .caracteristiques h2{
+          padding: 20px;
+        }
+        .caracteristiques h2 span{
+          color: orangered;
+        }
+        .caracteristiques-container{
+          display: flex;
+          justify-content: space-evenly;
+        }
+        .caracteristiques-container > div{
+          flex-direction: column;
+          gap: 10px;
+          width: 120px;
+          height: 120px;
+          font-weight: bold;
+          border-radius: 20px;
+          border: 1px solid darkgray;
+        }
+        .caracteristiques img{
+          width: 40px;
+        }
+        .caracteristiques span{
+          font-size: 1.2rem;
+        }
+
+      </style>
+    </section>
+
+    <section class="exo-type">
+      <span>QCM</span> 
+      <span>Vrai</span> 
+      <span>Faux</span>
+      <span>Jeux</span>
+      <span>matching</span>
+      <span>lexique</span>
+      <span>Apprendre</span> 
+      <span>S'amuser</span>
+      <span>Réviser</span>
+      <span class="langue">langue</span>
+      <style>
+        .exo-type{
+          width: 80%;
+          margin: auto;
+          display: flex;
+          justify-content: space-evenly;
+          flex-wrap: wrap;
+          gap: 40px;
+          padding: 40px 10px;
+        }
+        .exo-type span{
+          display: block;
+          padding: 25px 20px;
+          background-color: #2196F3;
+          border-radius: 40px;
+          font-size: 20px;
+          font-weight: bold;
+          color: white;
+        }
+        .exo-type span.active{
+          animation: rotation 0.1s 3 linear;
+        }
+        @keyframes rotation{
+          to{
+            transform: rotate(360deg)
+          }
+        }
+    @media screen and (max-width:768px){
+        .exo-type {
+          width: 100%;
+          gap: 10px;
+        }
+        .oeuvres-container img{
+          height: 200px;
+        }
+        .suggestion{
+          width: 90%;
+        }   
+        .liste-lecons{
+          flex-direction: column;
+          align-items:center;
+        }
+        .liste-lecons > div{
+          width: 90%;
+          height: 70px;
+        }
+        .caracteristiques-container > div {
+         width: 90px;
+         height: 90px;
+        }
+    }
+      </style>
+      <script>
+        // const exoType=document.querySelectorAll('.exo-type span')
+        // exoType.forEach(exo=>{
+        //   exo.onclick=()=>{
+        //     exo.classList.add('active')
+        //     console.log('mqmldf');
+            
+        //     setTimeout(() => {
+        //       exo.classList.remove('active');
+        //     }, 500)
+        //   }
+        // })
+     </script>
+    </section>
+    
+    <footer class="footer">
+      <div class="right"> Tous droits réservés </div>
+      <div class="right"> Eudûka - 2025  </div>
+ 
+      <style>
+        .footer{
+          display: flex;
+          justify-content:space-between;
+          padding: 10px 20px;
+          background-color: #33333399;
+          color: white;
+        }
+      </style>
+    </footer>
+    
+  </div> <!-- Fin wrapper-->
+      
+      <a class="whatsapp" href="https://wa.me/+212626527695" target="_blank" >
+        <img src="/client/assets/img/whatsapp.png" alt="whatsapp" srcset="">
+      </a>
+       <style>
+         .whatsapp{
+           position: fixed;
+           bottom: 20px; right: 20px;
+           width: 50px; height: 50px;
+           z-index: 40;
+         }
+         .whatsapp img{
+           width: 100%; height: 100%
+         }
+       </style>
+ <div class="loader">
+  <img src="/client/assets/img/images/loader.gif" alt="...Loading" srcset="">
+ </div>
+    
+<script src="main.js" type="module"></script>
+</body>
+
+</html>

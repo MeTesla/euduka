@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  <div class="modal">
+    <div class="modal-wrapper">
+      <div class="resultats">
+        <div class="message">
+          Session terminée, Voici tes résultats :
+        </div>
+        <div class="chiffres">
+          <div class="final"> <span> Note finale :</span> <span> 7/10</span></div>
+          <div class="fausse"><span> Réponses correctes : </span> <span> 7</span> </div>
+          <div class="correct"><span>Réponses fausses : </span> <span> 3</span>    </div>
+        </div>
+      </div>
+      <div class="options">
+        <div class="refaire"> Refaire la session</div>
+        <div class="nouvelle">Nouvelle session</div>
+        <div class="quitter">Quitter</div>
+      </div>
+    </div>
+    <style>
+    .modal{
+      width: 100vw;
+      height: 100vh;
+      position : fixed;
+      top: 0; left: 0;
+      display:flex;
+      justify-content: center; 
+      align-items: center;
+      background-color: #B0BEC5;
+    }
+    .modal-wrapper{
+      position: relative;
+      width: 85%;
+      padding: 30px 15px;
+      border: 1px solid darkgray;
+      border-radius: 15px;
+      margin: auto;
+      background-color: #ffffffaa;
+      bbackground-image: url('./assets/images/trophy.png');
+      background-size: 35%;
+      background-repeat: no-repeat;
+      background-position: bottom right;
+    }
+    .resultats .chiffres{
+      width: 80%;
+      margin : 10px auto;
+    }
+    .resultats .chiffres > div{
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      font-weight: bold;
+    }
+    
+    .resultats .chiffres > div span:nth-child(2){
+      color: blue;
+      font-size: 1.3rem;
+    }
+      .options{
+        ddisplay: flex;
+        justify-content: space-evenly;
+      }
+      
+      .options > div{
+        width: 40%;
+        margin: 10px auto;
+        padding: 10px 10px;
+        border-radius: 15px;
+        background-color: #D1C4E9;
+        text-align: center;
+        color: #222;
+      }
+      
+    </style>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+@font-face {
+    font-family: josefin;
+    src: url(../assets/josefin.ttf);
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'josefin', sans-serif;
+}
+.block-res{
+    /* background-image: radial-gradient(circle, #7d6bd1, #7b78d7, #7a84dd, #7b8fe1, #7e9ae4, #7da0e7, #7da7ea, #7eaded, #77b1f1, #70b6f5, #68baf8, #5fbefb); */
+    background-color: var(--blue-theme);
+    min-height: 100vh;
+    width: 100%;
+}
+.block-res .home-cont{
+    height: 60px;
+    width: 60px;
+    padding: 15px;
+}
+.home-cont img{
+    width: 30px;
+    display: block;
+}
+.resume-container{
+    width: 100vw;
+}
+
+.resume-cont {
+    display: flex;
+    flex-direction: column;
+}
+
+.chapitres{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+}
+.chapitres .chap{
+    font-size: 24px;
+    width: 35px;
+    height: 35px;
+    background-color: var(--pr);
+    margin: 5px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+    opacity: .8;
+    box-shadow: 0 0 2px gray;
+}
+.reader-cont {
+    overflow: scroll;
+}
+.reader-titre{
+    font-size: 2rem;
+    padding: 40px 0 ;
+    background-color: #bbc2b400;
+    color: var(--pr);
+    text-align: center;
+}
+.reader-cont p{
+    font-size: 1.2rem;
+    text-align: justify;
+    padding: 10px;
+    word-spacing: 6px;
+    transition: 1s all;
+    width: 90%;
+    margin: auto;
+    color: var(--pr);
+}
+
+.chap.selected{
+    background-color: var(--blue-theme);
+    font-weight: bold;
+    opacity: 1;
+    transition: .4s all;
+}

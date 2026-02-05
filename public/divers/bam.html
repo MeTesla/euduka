@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="./assets/img/Euduka.png">
+  <title>La boîte à merveilles - Ahmed SEFRIOUI</title>
+  
+</head>
+<body class="violet">
+  <div class="wrapper">
+    <section class="nav">
+          <div class="accueil">
+            <a href="index.html"><img src="./assets/img/euduka.png" alt="Eudûka" /></a>
+          </div>
+          <ul class="menu">
+            <li><div><a href="index.html">Accueil</a></div></li>
+            <li>
+              <div class="mega">Oeuvres</div>
+              <ul class="sous">
+                <li> <a href="#">La boîte à merveilles</a> </li>
+                <li>Antigone</li>
+                <li>Le dernier jour d'un condamné</li>
+              </ul>
+            </li>
+            <li>
+               <div class="mega">Langue</div>
+               <ul class="sous">
+                 <li>Les figures de style</li>
+                 <li>L'énonciation</li>
+                 <li>Les registres litéraires</li>
+               </ul>
+            </li>
+            <li><div>A propos</div></li>
+            <li><div>Nous contacter</div></li>
+            
+          </ul>
+          <div class="hum">  </div>
+        
+        <style>
+      .wrapper{
+        width: 60%;
+        margin: auto;
+      }
+     .nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 40px;
+        padding: 10px 15px;
+        background-color: #892982;
+        }
+      .accueil img{
+        width: 60px;
+      }
+    
+      .menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;   
+        gap: 15px; 
+        font-size: 1.2rem;
+        color: white;
+      }
+      
+      .menu > li{
+        position: relative;
+        list-style: none;
+        padding: 5px;
+        border-radius: 5px;
+      }
+      .menu .sous{
+        position: absolute;
+        display: none;
+        left: -10px;
+        width: 260px;
+        padding: 10px;
+        margin-left: 20px;
+        list-style: none;
+      }
+      .menu .sous li{
+        background-color: #eee;
+        padding: 10px 5px;
+        margin-bottom: 5px;
+      }
+      .hum{
+        position: relative;
+        display:none;
+        width: 25px;
+        height: 25px;
+        background-image: url('/client/assets/img/hum-menu.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+      }
+      @media screen and (max-width: 780px){
+        .wrapper{
+          width: 100%;
+        }
+          .hum{
+            display: block;
+            zz-index: -1;
+          }
+          .hum.active{
+            background-image: url('/client/assets/img/times.png')
+          }
+          .menu{
+           display:none;
+           position: absolute;
+           top: 0px; left: 0;
+           width: 100vw;
+           height: 100vh;
+           background-color: #42A5F5;
+           z-index: 22;
+           flex-direction: column;
+          }
+          .menu.active {
+            display: flex;
+          }
+    
+          .menu .sous{
+            position: static;
+            display: block;
+          }
+          .menu .sous li{
+            background-color: transparent;
+          }
+          .menu li div{
+            text-align: left;
+            font-weight: bold;
+          }
+        }
+       </style>
+ </section>     
+   
+    <section class="header">
+      <!--div class="logo"><img src="/client/assets/img/Euduka.png" alt=""></div -->
+      <div class="titre">La boîte à merveilles</div>
+    </section>
+   
+   <div class="wave"> 
+      <svg id="visual" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="900" height="100" fill="transparent"></rect><path d="M0 81L25 95C50 109 100 137 150 152C200 167 250 169 300 157.2C350 145.3 400 119.7 450 108.3C500 97 550 100 600 113.2C650 126.3 700 149.7 750 154.2C800 158.7 850 144.3 875 137.2L900 130L900 0L875 0C850 0 800 0 750 0C700 0 650 0 600 0C550 0 500 0 450 0C400 0 350 0 300 0C250 0 200 0 150 0C100 0 50 0 25 0L0 0Z" stroke-linecap="round" stroke-linejoin="miter"></path></svg>
+     </div>
+    
+    <section class="corps">  </section>
+ </div>
+
+ <script type="module">
+ import {listeAct} from './components/act/listeAct.js'
+ const hum=document.querySelector('.hum')
+ const menu=document.querySelector('.menu')
+ const wrapper= document.querySelector('.wrapper');
+ hum.onclick=()=>{
+   menu.classList.toggle('active')
+   hum.classList.toggle('active')
+ }
+ 
+         //-----------Les 12 chapitres -------
+for (let i = 1; i <= 12; i++) {
+  let div = document.createElement('div');
+  div.classList.add('titre-chap');
+  div.innerHTML = i;
+  document.querySelector('.corps').appendChild(div)
+}
+const titreChap = document.querySelectorAll('.titre-chap')
+
+// Au clic ouvrir La liste des ACTIVITES
+titreChap.forEach((item, index) => {
+  item.addEventListener('click', () => {
+    listeAct(wrapper, index)
+  })
+})
+       </script>
+</body>
+</html>

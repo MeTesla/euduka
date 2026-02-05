@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="form-container" style="display:nnone">
+        <form class="form">
+            <h2>Créer un compte</h2>
+            <input type="text" placeholder="Votre nom" name="nom" id="">
+            <input type="text" placeholder="Votre prénom" name="prenom" id="">
+            <input type="email" placeholder="Email ..." name="email" id="">
+            <input type="tel" placeholder="Numéro de téléphone..." name="tel" id="">
+            <div class="buttons">
+                <button type="submit">Envoyer</button>
+                <button>Annuler</button>
+            </div>
+        </form>
+        <style>
+        .form-container{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        form.form{
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 3px rgb(179, 180, 255);
+            padding: 20px;
+            border-radius: 15px;
+        }
+        form.form input{
+            width: 80%;
+            padding: 10px;
+            border: 1px solid rgb(155, 144, 255);
+            border-radius: 5px;
+            outline: none
+        }
+        form.form button{
+            padding: 10px;
+            border: 1px solid rgb(155, 144, 255);
+            border-radius: 5px;
+            outline: none
+        }
+        </style>
+    </div>
+
+    <div class="premium" style="display:nnone">
+        <div class="premium-container">
+            <h3>Coller votre code</h3>
+            <input type="text" name="code" placeholder="Coller ici le code">
+            <div class="buttons">
+                <button type="submit">Envoyer</button>
+                <button>Annuler</button>
+            </div>
+        </div>
+        <style>
+            .premium{
+                height: 100vh;
+
+                display: flex;
+                justify-content: center ;
+                align-items: center;
+            }
+            .premium-container{
+                width: 250px;
+                padding: 30px 0px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center ;
+                align-items: center;
+                box-shadow: 0 0 3px rgb(132, 132, 247);
+                border-radius: 15px;
+                gap: 20px;
+            }
+            .premium-container h3{
+                padding: 0; margin: 0;
+            }
+            .premium-container input{
+                padding: 15px 5px;
+                border: 1px solid rgb(201, 195, 255);
+                outline: none;
+                border-radius: 5px;
+                text-align: center;
+            }
+            .premium-container button{
+                padding: 10px;
+                border: 1px solid rgb(155, 144, 255);
+                border-radius: 5px;
+                outline: none
+            }
+        </style>
+    </div>
+
+    
+</body>
+</html>

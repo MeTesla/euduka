@@ -1,0 +1,171 @@
+.mdp-reinitialiser-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--pr);
+    padding: 20px;
+}
+
+.modal-mdp-reinitialiser {
+    background: var(--pr);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    animation: s .4s;
+}
+
+.modal-mdp-reinitialiser h2 {
+    text-align: center;
+    color: var(--secf);
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    font-family: tahoma, Courier, monospace;
+}
+
+.modal-mdp-reinitialiser .input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.modal-mdp-reinitialiser input[type="password"],
+.modal-mdp-reinitialiser input[type="text"] {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid var(--secc);
+    border-radius: 30px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-family: josefin;
+}
+
+.modal-mdp-reinitialiser input:focus {
+    border-color: var(--comp);
+    box-shadow: 0 0 0 3px rgba(232, 147, 50, 0.2);
+}
+
+.modal-mdp-reinitialiser input.error {
+    border-color: var(--error);
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+}
+
+.modal-mdp-reinitialiser .error-message {
+    color: var(--error);
+    font-size: 0.85rem;
+    margin-top: 8px;
+    padding-left: 15px;
+    display: none;
+}
+
+.modal-mdp-reinitialiser .error-message.show {
+    display: block;
+    animation: op .3s;
+}
+
+.modal-mdp-reinitialiser #reset-password-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--comp);
+    color: var(--pr);
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+    margin-top: 10px;
+}
+
+.modal-mdp-reinitialiser #reset-password-btn:hover {
+    background-color: #d68228;
+    transform: scale(1.02);
+}
+
+.modal-mdp-reinitialiser #reset-password-btn:active {
+    transform: scale(0.98);
+}
+
+.modal-mdp-reinitialiser #reset-password-btn:disabled {
+    background-color: var(--sec);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.modal-mdp-reinitialiser .password-toggle {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--sec);
+    font-size: 1.2rem;
+    user-select: none;
+}
+
+.modal-mdp-reinitialiser .success-message {
+    text-align: center;
+    color: var(--success);
+    padding: 20px;
+    background: rgba(39, 174, 96, 0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-mdp-reinitialiser .success-message h3 {
+    margin-bottom: 10px;
+}
+
+.modal-mdp-reinitialiser .back-login {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.modal-mdp-reinitialiser .back-login a {
+    color: var(--comp);
+    font-weight: bold;
+}
+
+.modal-mdp-reinitialiser .back-login a:hover {
+    text-decoration: underline;
+}
+
+.modal-mdp-reinitialiser .token-expired {
+    text-align: center;
+    color: var(--error);
+    padding: 30px;
+}
+
+.modal-mdp-reinitialiser .token-expired h3 {
+    margin-bottom: 15px;
+}
+
+.modal-mdp-reinitialiser .token-expired p {
+    margin-bottom: 20px;
+    color: var(--sec);
+}
+
+@keyframes s {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .modal-mdp-reinitialiser {
+        padding: 25px;
+        margin: 10px;
+    }
+
+    .modal-mdp-reinitialiser h2 {
+        font-size: 1.3rem;
+    }
+}

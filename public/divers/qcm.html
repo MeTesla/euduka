@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="../style.css">
+ <title></title>
+</head>
+
+<body>
+ <div class="qcm">
+  
+
+<div class="entete">
+ <a href="../index.html">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg>   
+ </a>
+    <h2 class="chap-titre">Chapitre I</h2>
+    <span class="close">x</span>
+  </div>
+  
+ <section class="quiz-container">
+ <div class="q-head">
+  <div class="num-qst"></div>
+  <div class="progress-bar">
+   <div class="progress"></div>
+  </div>
+ </div>
+
+ <div class="q-content">
+  <div class="qst">Quel est l'âge du narrateur ?</div>
+  <div class="les-choix">
+   <div class="choix c1">5 ans</div>
+   <div class="choix c2">6 ans</div>
+   <div class="choix c3">7 ans</div>
+  </div>
+ </div>
+ <div class="score">20</div>
+ <div class="q-foot">
+  <div class="precedent"></div>
+  <div class="valider">Valider</div>
+  <div class="suivant"></div>
+ </div>
+ </div>
+ 
+ 
+ <style>
+@font-face {
+  font-family: josefin;
+  src: url(../assets/josefin.ttf);
+}
+:root{
+ --comp: #A1673B;
+}
+.qcm {
+ position: absolute;top: 0;
+ width: 100% ;height: 100vh;
+ background-color: white;
+ animation: op .4s;
+}
+
+ .fermerImg{
+  width: 30px;
+  height: 30px;
+  bbackground: url('/client/assets/img/home.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.entete{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+.entete .chap-titre{
+  color: var(--secf);
+  letter-spacing: 7px;
+  font-weight: 800;
+}
+.entete a{
+  text-decoration: none
+}
+.entete a svg{
+ width: 30px ;
+ height :30px;
+ fill: var(--sec);
+}
+.entete span{
+ color: var(--sec) ;
+ font-size: 32px;
+}
+.
+.q-head{
+  padding: 5px;
+  margin: 5px auto;
+  color: orangered;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.entete h2{
+ color: red;
+}
+.q-head .progress-bar{
+   width:300px;
+   height: 10px;
+   border: 1px solid var(--secc);
+   position: relative;
+   border-radius: 10px;
+   overflow: hidden;
+   margin: auto;
+}
+
+.q-head .progress{
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  width: 30%;
+  transition: .5s ease-out;
+  background-color: var(--comp) ;
+}
+
+.num-qst{
+  padding: 5px;
+  font-size: 1.2em;
+  text-align: center;
+  color: rgb(212, 212, 212);
+}
+.q-content{
+  width: 100%;   
+}
+
+.qst{
+   font-size: 1.2rem;
+   margin: 30px 15px;
+   color: var(--sec);
+   width: 90%;
+   min-height: 80px;
+   display :flex;
+   align-items :center;
+}
+.les-choix{
+  height:180px;
+}
+.choix{
+  color: var(--secf);
+  border :1px solid var(--secc);
+  width: 90%;
+  padding: 8px 15px ;
+  margin: 10px auto;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  transition: .3s;
+}
+
+.choix:nth-child(2){
+ color: var(--secf);
+ background-color: #e8e8e8;
+ font-weight: bold;
+}
+
+.choix.selected{
+    background-color: #aaa ;
+}
+.reponseCorrect{
+  background-color: green;
+}
+
+.score{
+  font-size: 3rem;
+  color: var(--sec);
+  margin: 0px auto;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  border-radius: 50%;
+  border: 2px solid #333;
+}
+.q-foot{
+   display: flex;
+   justify-content: center ;
+   align-items: center;
+   margin: 40px auto 0;
+   width: 100%;
+}
+
+.valider{
+   background-color: var(--comp) ;
+   color: white ;
+   border-radius: 20px;
+   width: 250px;
+   height: 50px;
+   line-height: 50px;
+   text-align: center;
+   font-size :1.2rem;
+   font-weight: bold;
+   cursor: pointer;
+   transition: .3s;
+}
+
+.q-foot .precedent, .q-foot .suivant{
+   border-radius: 20px;
+   width: 20px;
+   height: 20px;
+   line-height: 40px;
+   text-align: center;
+   margin: 0 20px;
+   cursor: pointer;
+   background-repeat : no-repeat
+}
+.precedent{
+  background-image: url(./images/previous.svg)
+}
+.suivant{
+  background-image: url(./images/next.svg)
+}
+
+.center{
+  display: flex;
+}
+</style> 
+</section>
+</body>
+
+</html>
