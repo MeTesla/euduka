@@ -1,17 +1,15 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 
-const elevesSchema = new mongoose.Schema({
+const eleveSchema = new mongoose.Schema({
     nom: { type: String, required: true },
     prenom: { type: String, required: true },
     email: { type: String, unique: true, required: true },
     tel: { type: String, required: true },
     password: { type: String, required: true },
-
     token: { type: String, unique: true },
-
     freeMins: { type: Number, default: 2 },
     dateFreeMin: { type: Date, default: Date.now },
-
     role: { type: String, enum: ['non_verifie', 'basic', 'attente_premium', 'premium'], required: true },
     premiumRequest: {
         date: { type: Date },
@@ -20,45 +18,25 @@ const elevesSchema = new mongoose.Schema({
         statut: { type: String, enum: ['en_attente', 'valide', 'refuse'], default: null }
     },
     resultats: {
-        qcm: {
-            score: { type: Number, default: 0 },
-            scores: { type: Array, default: [] },
-            nbrQsts: { type: Number, default: 0 },
-            date: { type: String },
-            lastSession: { type: Array, default: [] }
-        },
-        vf: {
-            score: { type: Number, default: 0 },
-            scores: { type: Array, default: [] },
-            nbrQsts: { type: Number, default: 0 },
-            date: { type: String },
-            lastSession: { type: Array, default: [] },
-        },
-        remplir: {
-            score: { type: Number, default: 0 },
-            scores: { type: Array, default: [] },
-            nbrQsts: { type: Number, default: 0 },
-            date: { type: String },
-            lastSession: { type: Array, default: [] },
-        },
-        ordrePhrases: {
-            score: { type: Number, default: 0 },
-            scores: { type: Array, default: [] },
-            nbrQsts: { type: Number, default: 0 },
-            date: { type: String },
-            lastSession: { type: Array, default: [] },
-        },
-        ordreEvenements: {
-            score: { type: Number, default: 0 },
-            scores: { type: Array, default: [] },
-            nbrQsts: { type: Number, default: 0 },
-            date: { type: String },
-            lastSession: { type: Array, default: [] },
-        }
+        qcm: { score: { type: Number, default: 0 }, scores: { type: Array, default: [] }, nbrQsts: { type: Number, default: 0 }, date: { type: String }, lastSession: { type: Array, default: [] } },
+        vf: { score: { type: Number, default: 0 }, scores: { type: Array, default: [] }, nbrQsts: { type: Number, default: 0 }, date: { type: String }, lastSession: { type: Array, default: [] } },
+        remplir: { score: { type: Number, default: 0 }, scores: { type: Array, default: [] }, nbrQsts: { type: Number, default: 0 }, date: { type: String }, lastSession: { type: Array, default: [] } },
+        ordrePhrases: { score: { type: Number, default: 0 }, scores: { type: Array, default: [] }, nbrQsts: { type: Number, default: 0 }, date: { type: String }, lastSession: { type: Array, default: [] } },
+        ordreEvenements: { score: { type: Number, default: 0 }, scores: { type: Array, default: [] }, nbrQsts: { type: Number, default: 0 }, date: { type: String }, lastSession: { type: Array, default: [] } }
     },
     dateCreation: { type: Date, default: Date.now }
-})
+});
 
-const EleveModel = mongoose.model('Eleve', elevesSchema)
+eleveSchema.pre('save', async function(next) {
+    if (!this.isModified('password')) return next();
+    this.password = await bcrypt.hash(this.password, 10);
+    next();
+});
 
-module.exports = EleveModel
+eleveSchema.methods.comparePassword = async function(candidatePassword) {
+    return bcrypt.compare(candidatePassword, this.password);
+};
+
+const EleveModel = mongoose.model('Eleve', eleveSchema);
+
+module.exports = EleveModel;

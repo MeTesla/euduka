@@ -1,14 +1,15 @@
 {
-  "name": "server",
+  "name": "euduka-api",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "vercel.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "node vercel.js",
+    "dev": "nodemon vercel.js"
   },
   "author": "karim",
   "license": "MIT",
-  "description": "",
+  "description": "Euduka API for Vercel serverless",
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.5",
@@ -20,7 +21,9 @@
     "mongoose": "^8.18.1",
     "multer": "^2.0.2",
     "nodemailer": "^7.0.6",
-    "nodemon": "^3.1.10",
-    "socket.io": "^4.8.3"
+    "serverless-http": "^3.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }
